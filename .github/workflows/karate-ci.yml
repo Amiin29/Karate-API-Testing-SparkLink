@@ -3,7 +3,7 @@ name: Karate CI
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   test:
