@@ -1,4 +1,4 @@
-name: Karate CI
+name: Workflow Karate CI
 
 on:
   push:
@@ -21,3 +21,14 @@ jobs:
 
     - name: Build and test with Maven
       run: mvn clean test
+
+    - name: Generate Karate Reports
+      run: mvn surefire-report:report-only karate:stop
+      # Assuming Karate reports are generated in target/site/karate/
+
+    - name: Deploy Karate reports to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: target/site/karate
