@@ -21,3 +21,13 @@ jobs:
 
     - name: Build and test with Maven
       run: mvn clean test
+
+    - name: Generate Karate Reports
+      run: mvn surefire-report:report-only karate:stop
+      # Assuming Karate reports are generated in target/site/karate/
+
+    - name: Publish HTML report
+      uses: actions/upload-artifact@v2
+      with:
+        name: karate-reports
+        path: target/karate-reports/karate-summary.html
