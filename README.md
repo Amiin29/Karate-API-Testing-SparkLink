@@ -21,8 +21,4 @@ Exécutez les tests en utilisant votre IDE ou via Maven :
 mvn test
 
 ```
-    
-## Screenshots
-
-![App Screenshot](file:///C:/Users/AminMILADI/OneDrive%20-%20Mobelite/Documents/pfe/karate%20reports.png)
 
