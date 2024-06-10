@@ -1,4 +1,4 @@
-Feature: Testing Users API
+Feature: Testing Users APII
 
   Background:
     * url 'https://reqres.in/api'
